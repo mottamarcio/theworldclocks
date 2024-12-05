@@ -1,7 +1,3 @@
-Claro! Aqui está o conteúdo do **README.md** para o seu projeto:
-
----
-
 # **TheWorldClocks**
 
 TheWorldClocks is a web application that displays the current time, date, and location of the user. It also includes a table showing the local time of the 20 most popular cities around the world, along with their time zones.
