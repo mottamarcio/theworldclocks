@@ -28,6 +28,10 @@ function Clockcard() {
         getLocation();
     }, []);
 
+    useEffect(() => {
+        document.title = `TheWorldClocks | ${time || 'Loading...'}`;
+    }, [time]);
+
     return (
         <div className="card text-center my-5 border-0 min-vh-100">
             <div className="card-body bg-dark">
