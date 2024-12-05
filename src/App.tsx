@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container my-5">
         <Clockcard />
       </div>
       <Footer />
