@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
+import fetchLocation from '../api/fetchLocation';
 
 function Clockcard() {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
+    const [location, setLocation] = useState('Fetching location...');
 
     useEffect(() => {
         const updateTime = () => {
@@ -17,12 +19,21 @@ function Clockcard() {
         return () => clearInterval(timer); // Cleanup on unmount        
     }, []);
 
+    useEffect(() => {
+        const getLocation = async () => {
+            const result = await fetchLocation();
+            setLocation(`${result}`);
+        };
+
+        getLocation();
+    }, []);
+
     return (
         <div className="card text-center my-5" style={{ width: '100%' }}>
             <div className="card-body">
                 <h1 className="card-title">{time}</h1>
                 <p className="card-title">{date}</p>
-                <p className="card-text">Location details will be shown here.</p>
+                <p className="card-text">{location}</p>
             </div>
         </div>
     )
