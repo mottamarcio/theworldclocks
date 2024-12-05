@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-const fetchLocation = async (): Promise<string> => {
+interface LocationData {
+    address: string;
+    timezone: string;
+    gmtOffset: string;
+}
+
+const fetchLocation = async (): Promise<LocationData> => {
     const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
     if (!apiKey) {
@@ -15,25 +21,34 @@ const fetchLocation = async (): Promise<string> => {
         });
 
         const { latitude, longitude } = position.coords;
-        const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
 
-        const response = await axios.get(url);
-        const location = response.data.results;
+        // Fetch address
+        const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
+        const geocodeResponse = await axios.get(geocodeUrl);
+        const results = geocodeResponse.data.results;
 
-        console.log(location);
+        const address = results && geocodeResponse.data.plus_code
+            ? geocodeResponse.data.plus_code.compound_code.substring(9).trim()
+            : 'Unable to determine location';
 
-        if (location && response.data.plus_code) {
-            const compoundCode = response.data.plus_code.compound_code;
-            // Extract substring ignoring the first 8 characters
-            const location = compoundCode.substring(8).trim();
-            return location;
-        }
+        // Fetch timezone
+        const timestamp = Math.floor(Date.now() / 1000);
+        const timezoneUrl = `https://maps.googleapis.com/maps/api/timezone/json?location=${latitude},${longitude}&timestamp=${timestamp}&key=${apiKey}`;
+        const timezoneResponse = await axios.get(timezoneUrl);
 
-        return 'Unable to determine location';
+        const { timeZoneName, rawOffset, dstOffset } = timezoneResponse.data;
+        const totalOffset = rawOffset + dstOffset; // Total offset in seconds
+        const gmtOffset = `GMT${totalOffset >= 0 ? '+' : ''}${totalOffset / 3600}`;
+
+        return { address, timezone: timeZoneName, gmtOffset };
     } catch (error) {
-        return error.message === 'Geolocation not supported or permission denied'
-            ? 'Geolocation not supported or permission denied'
-            : 'Failed to fetch location';
+        return {
+            address: error.message === 'Geolocation not supported or permission denied'
+                ? 'Geolocation not supported or permission denied'
+                : 'Failed to fetch location',
+            timezone: 'Unknown timezone',
+            gmtOffset: 'Unknown GMT',
+        };
     }
 };
 

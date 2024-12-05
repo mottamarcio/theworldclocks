@@ -5,6 +5,8 @@ function Clockcard() {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('Fetching location...');
+    const [timezone, setTimezone] = useState<string>('Fetching timezone...');
+    const [gmtOffset, setGmtOffset] = useState<string>('Fetching GMT...');
 
     useEffect(() => {
         const updateTime = () => {
@@ -22,7 +24,9 @@ function Clockcard() {
     useEffect(() => {
         const getLocation = async () => {
             const result = await fetchLocation();
-            setLocation(`${result}`);
+            setLocation(result.address);
+            setTimezone(result.timezone);
+            setGmtOffset(result.gmtOffset);
         };
 
         getLocation();
@@ -38,6 +42,7 @@ function Clockcard() {
                 <p className="clock text-white">{time}</p>
                 <p className="card-title text-white">{date}</p>
                 <p className="card-text text-white">{location}</p>
+                <p className="card-text text-white">{`${timezone} (${gmtOffset})`}</p>
             </div>
         </div>
     )
