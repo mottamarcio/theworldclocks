@@ -37,7 +37,7 @@ function Clockcard() {
     }, [time]);
 
     return (
-        <div className="card text-center my-5 border-0 min-vh-100">
+        <div className="card text-center my-5 border-0">
             <div className="card-body bg-dark">
                 <p className="clock text-white">{time}</p>
                 <p className="card-title text-white">{date}</p>
