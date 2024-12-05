@@ -9,7 +9,7 @@ function Clockcard() {
     useEffect(() => {
         const updateTime = () => {
             const now = new Date();
-            setTime(now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' }));
+            setTime(now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }));
             setDate(now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));  
         }
 
@@ -29,11 +29,11 @@ function Clockcard() {
     }, []);
 
     return (
-        <div className="card text-center my-5" style={{ width: '100%' }}>
-            <div className="card-body">
-                <h1 className="card-title">{time}</h1>
-                <p className="card-title">{date}</p>
-                <p className="card-text">{location}</p>
+        <div className="card text-center my-5 border-0 min-vh-100">
+            <div className="card-body bg-dark">
+                <p className="clock text-white">{time}</p>
+                <p className="card-title text-white">{date}</p>
+                <p className="card-text text-white">{location}</p>
             </div>
         </div>
     )
