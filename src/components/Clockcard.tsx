@@ -37,12 +37,16 @@ function Clockcard() {
     }, [time]);
 
     return (
-        <div className="card text-center my-5 border-0">
+        <div className="card text-center my-2 border-0">
             <div className="card-body bg-dark">
+                <table className='table table-dark table-bordered'>
+                    <tr>
+                        <td>{date}</td>
+                        <td>{location}</td>
+                        <td>{`${timezone} (${gmtOffset})`}</td>
+                    </tr>
+                </table>
                 <p className="clock text-white">{time}</p>
-                <p className="card-title text-white">{date}</p>
-                <p className="card-text text-white">{location}</p>
-                <p className="card-text text-white">{`${timezone} (${gmtOffset})`}</p>
             </div>
         </div>
     )
