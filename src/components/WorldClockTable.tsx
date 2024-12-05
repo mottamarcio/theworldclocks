@@ -20,7 +20,7 @@ const WorldClockTable = () => {
             const currentGmtTime = moment.utc();
 
             const updatedCities = cities.map(city => {
-                const localTime = currentGmtTime.clone().utcOffset(city.timezone).format('HH:mm:ss');
+                const localTime = currentGmtTime.clone().utcOffset(city.timezone).format('HH:mm (dddd)');
                 return { ...city, localTime };
             });
 
