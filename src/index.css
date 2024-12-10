@@ -11,6 +11,10 @@ body {
   background-color: rgba(33, 37, 41);
 }
 
+#brand {
+  font-weight: 300;
+}
+
 #clock {
   font-family: "Montserrat", sans-serif;
   font-size: 13rem;
@@ -26,9 +30,8 @@ body {
   font-weight: 200;
 }
 
-#location>strong {
+strong {
   font-weight: 700;
-
 }
 
 /* ############## MEDIA QUERY ############## */
