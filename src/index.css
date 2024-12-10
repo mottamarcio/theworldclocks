@@ -8,13 +8,50 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: rgba(33,37,41);
+  background-color: rgba(33, 37, 41);
 }
 
-.clock {
+#clock {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(5rem, 10vw, 20vh);
+  font-size: 13rem;
   font-weight: bolder;
   white-space: nowrap;
-  font-feature-settings:'tnum';
+  font-feature-settings: 'tnum';
+  padding-inline: 8px;
+}
+
+#location,
+#date,
+#timezone {
+  font-weight: 200;
+}
+
+#location>strong {
+  font-weight: 700;
+
+}
+
+/* ############## MEDIA QUERY ############## */
+
+@media screen and (max-width: 768px) {
+  #clock {
+    font-size: 4rem;
+    padding-inline: 8px;
+  }
+
+  #location {
+    font-size: 1.25rem;
+  }
+
+  #date,
+  #timezone {
+    font-size: 1rem;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #clock {
+    font-size: 8rem;
+  }
 }

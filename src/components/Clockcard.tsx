@@ -12,7 +12,7 @@ function Clockcard() {
         const updateTime = () => {
             const now = new Date();
             setTime(now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }));
-            setDate(now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));  
+            setDate(now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
         }
 
         updateTime();
@@ -37,18 +37,13 @@ function Clockcard() {
     }, [time]);
 
     return (
-        <div className="card text-center my-2 border-0">
-            <div className="card-body bg-dark">
-                <table className='table table-dark table-bordered'>
-                    <tr>
-                        <td>{date}</td>
-                        <td>{location}</td>
-                        <td>{`${timezone} (${gmtOffset})`}</td>
-                    </tr>
-                </table>
-                <p className="clock text-white">{time}</p>
-            </div>
-        </div>
+        <>
+            <h1 className="text-center text-white my-2" id="location">Time in <strong>{location}</strong> now is:</h1>
+            <h2 className="text-center text-white" id="clock">{time}</h2>
+            <h4 className="text-center text-white" id="date">{date}</h4>
+            <h4 className="text-center text-white" id="timezone">{`${timezone} (${gmtOffset})`}</h4>
+            <br/><br/>
+        </>
     )
 }
 
