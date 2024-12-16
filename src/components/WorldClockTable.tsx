@@ -11,7 +11,7 @@ interface CityWithTime {
     localTime: string;
 }
 
-const WorldClockTable = () => {
+const WorldClockTable = ({ is24HourFormat }: { is24HourFormat: boolean }) => {
     const [cityData, setCityData] = useState<CityWithTime[]>([]);
     const [sortConfig, setSortConfig] = useState<{ key: keyof CityWithTime; direction: 'asc' | 'desc' } | null>(null);
 
@@ -20,18 +20,21 @@ const WorldClockTable = () => {
             const currentGmtTime = moment.utc();
 
             const updatedCities = cities.map(city => {
-                const localTime = currentGmtTime.clone().utcOffset(city.timezone).format('HH:mm (dddd)');
+                const localTime = currentGmtTime
+                    .clone()
+                    .utcOffset(city.timezone)
+                    .format(is24HourFormat ? 'HH:mm (ddd)' : 'hh:mm A (ddd)');
                 return { ...city, localTime };
             });
 
             setCityData(updatedCities);
         };
 
-        updateTimes(); 
+        updateTimes();
         const timer = setInterval(updateTimes, 1000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [is24HourFormat]);
 
     const handleSort = (key: keyof CityWithTime) => {
         let direction: 'asc' | 'desc' = 'asc';
