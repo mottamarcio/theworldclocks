@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar"
 import WorldClockTable from "./components/WorldClockTable"
 
 function App() {
-  const [is24HourFormat, setIs24HourFormat] = useState(true);
+  const [is24HourFormat, setIs24HourFormat] = useState(false);
 
   const toggleTimeFormat = () => {
     setIs24HourFormat(prev => !prev);

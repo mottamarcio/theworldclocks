@@ -53,7 +53,7 @@ function Clockcard({ is24HourFormat, toggleTimeFormat }:{ is24HourFormat: boolea
             <h2 className="text-center text-white" id="clock" onClick={toggleTimeFormat} title="Click to toggle time format" style={{ cursor: 'pointer' }}>{time}</h2>
             <h4 className="text-center text-white" id="date">{date}</h4>
             <h4 className="text-center text-white" id="timezone">{`${timezone} (${gmtOffset})`}</h4>
-            <br/><br/>
+            <br/>
         </>
     )
 }
