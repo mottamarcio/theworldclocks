@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import WorldClockTable from "./components/WorldClockTable";
 import CityDetails from "./components/CityDetails";
+import Timer from "./components/Timer";
 
 function App() {
     const [is24HourFormat, setIs24HourFormat] = useState(false);
@@ -28,6 +29,7 @@ function App() {
                         }
                     />
                     <Route path="/:country/:city" element={<CityDetails is24HourFormat={is24HourFormat} toggleTimeFormat={toggleTimeFormat}/>} />
+                    <Route path="/timer" element={<Timer />} />
                 </Routes>
             </div>
             <Footer />
