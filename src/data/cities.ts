@@ -28,5 +28,8 @@ export const cities: City[] = [
   { name: 'Istanbul', country: 'Turkey', timezone: moment.tz('Europe/Istanbul').format('Z'), capital: 'Ankara', flag: '🇹🇷' },
   { name: 'Singapore', country: 'Singapore', timezone: moment.tz('Asia/Singapore').format('Z'), capital: 'Singapore', flag: '🇸🇬' },
   { name: 'Los Angeles', country: 'United States', timezone: moment.tz('America/Los_Angeles').format('Z'), capital: 'Washington, D.C.', flag: '🇺🇸' },
-  { name: 'Toronto', country: 'Canada', timezone: moment.tz('America/Toronto').format('Z'), capital: 'Ottawa', flag: '🇨🇦' }
+  { name: 'Toronto', country: 'Canada', timezone: moment.tz('America/Toronto').format('Z'), capital: 'Ottawa', flag: '🇨🇦' },
+  { name: 'Mexico City', country: 'Mexico', timezone: moment.tz('America/Mexico_City').format('Z'), capital: 'Mexico City', flag: '🇲🇽' },
+  { name: 'Buenos Aires', country: 'Argentina', timezone: moment.tz('America/Argentina/Buenos_Aires').format('Z'), capital: 'Buenos Aires', flag: '🇦🇷' },
+  { name: 'New Delhi', country: 'India', timezone: moment.tz('Asia/Kolkata').format('Z'), capital: 'New Delhi', flag: '🇮🇳' }
 ];
