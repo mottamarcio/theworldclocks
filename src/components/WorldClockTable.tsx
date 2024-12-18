@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { cities } from '../data/cities';
 import moment from 'moment-timezone';
+import { stringNormalize } from '../utils/stringNormalize';
 
 interface CityWithTime {
     name: string;
@@ -11,27 +13,31 @@ interface CityWithTime {
     localTime: string;
 }
 
-const WorldClockTable = () => {
+const WorldClockTable = ({ is24HourFormat }: { is24HourFormat: boolean }) => {
     const [cityData, setCityData] = useState<CityWithTime[]>([]);
     const [sortConfig, setSortConfig] = useState<{ key: keyof CityWithTime; direction: 'asc' | 'desc' } | null>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const updateTimes = () => {
             const currentGmtTime = moment.utc();
 
             const updatedCities = cities.map(city => {
-                const localTime = currentGmtTime.clone().utcOffset(city.timezone).format('HH:mm (dddd)');
+                const localTime = currentGmtTime
+                    .clone()
+                    .utcOffset(city.timezone)
+                    .format(is24HourFormat ? 'HH:mm (ddd)' : 'hh:mm A (ddd)');
                 return { ...city, localTime };
             });
 
             setCityData(updatedCities);
         };
 
-        updateTimes(); 
+        updateTimes();
         const timer = setInterval(updateTimes, 1000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [is24HourFormat]);
 
     const handleSort = (key: keyof CityWithTime) => {
         let direction: 'asc' | 'desc' = 'asc';
@@ -65,6 +71,12 @@ const WorldClockTable = () => {
         return '';
     };
 
+    const handleRowClick = (country: string, city: string, timezone: string) => {
+        const countryNormalized = stringNormalize(country);
+        const cityNormalized = stringNormalize(city);
+        navigate(`/${countryNormalized}/${cityNormalized}`, { state: { timezone, country, city }});
+    }
+
     return (
         <div className="table-responsive mt-4">
             <table className="table table-striped table-dark text-center">
@@ -89,7 +101,7 @@ const WorldClockTable = () => {
                 </thead>
                 <tbody>
                     {sortedData.map((city, index) => (
-                        <tr key={index}>
+                        <tr key={index} onClick={() => { handleRowClick(city.country, city.name, city.timezone) }} style={{ cursor: 'pointer' }}>
                             <td>{city.flag}</td>
                             <td>{city.name}</td>
                             <td>{city.country}</td>

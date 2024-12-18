@@ -17,7 +17,7 @@ body {
 
 #clock {
   font-family: "Montserrat", sans-serif;
-  font-size: 13rem;
+  font-size: clamp(4rem, 10vw, 13rem);
   font-weight: bolder;
   white-space: nowrap;
   font-feature-settings: 'tnum';
@@ -38,12 +38,11 @@ strong {
 
 @media screen and (max-width: 768px) {
   #clock {
-    font-size: 4rem;
-    padding-inline: 8px;
+    font-size: clamp(2rem, 13vw, 10rem);
   }
 
   #location {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   #date,
@@ -51,10 +50,4 @@ strong {
     font-size: 1rem;
   }
 
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  #clock {
-    font-size: 8rem;
-  }
 }
