@@ -25,6 +25,7 @@ body {
 }
 
 #location,
+#timer-title,
 #date,
 #timezone {
   font-weight: 200;
