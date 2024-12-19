@@ -7,6 +7,7 @@ import WorldClockTable from "./components/WorldClockTable";
 import CityDetails from "./components/CityDetails";
 import Timer from "./components/Timer";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import BannerAd from "./components/BannerAd";
 
 function App() {
     const [is24HourFormat, setIs24HourFormat] = useState(false);
@@ -25,6 +26,7 @@ function App() {
                         element={
                             <>
                                 <Clockcard is24HourFormat={is24HourFormat} toggleTimeFormat={toggleTimeFormat} />
+                                <BannerAd adClient="ca-pub-1574925051650355" adSlot="2343975816" adFormat="fluid" adLayoutKey="-fb+5w+4e-db+86" />
                                 <WorldClockTable is24HourFormat={is24HourFormat} />
                             </>
                         }
@@ -33,6 +35,7 @@ function App() {
                     <Route path="/timer" element={<Timer />} />
                 </Routes>
             </div>
+            <BannerAd adClient="ca-pub-1574925051650355" adSlot="2343975816" adFormat="fluid" adLayoutKey="-fb+5w+4e-db+86" />
             <Footer />
         </BrowserRouter>
     );
