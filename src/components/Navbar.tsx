@@ -21,7 +21,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav me-auto">
                         {/* Menu Timezone */}
-                        <li className="nav-item dropdown">
+                        {/* <li className="nav-item dropdown">
                             <a
                                 className="nav-link dropdown-toggle"
                                 href="#"
@@ -44,7 +44,7 @@ const Navbar = () => {
                                 <li><Link to="/timezone/india" className="dropdown-item">India Standard Time</Link></li>
                                 <li><Link to="/timezone/brazil" className="dropdown-item">Brazil Standard Time</Link></li>
                             </ul>
-                        </li>
+                        </li> */}
 
                         {/* Menu Tools */}
                         <li className="nav-item dropdown">
@@ -63,7 +63,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                     </ul>
-                    {/* Search Field */}
+                    {/* Search Field
                     <form className="d-flex">
                         <input
                             className="form-control me-1 bg-dark text-white placeholder-light"
@@ -73,9 +73,9 @@ const Navbar = () => {
                             style={{ borderColor: "rgba(255, 255, 255, 0.5)" }}
                         />
                         <button className="btn btn-outline-light" type="submit" style={{ borderColor: "rgba(255, 255, 255, 0.5)" }}>
-                            <i className="bi bi-search"></i> {/* Ícone de lupa */}
+                            <i className="bi bi-search"></i>
                         </button>
-                    </form>
+                    </form> */}
                 </div>
             </div>
         </nav>
