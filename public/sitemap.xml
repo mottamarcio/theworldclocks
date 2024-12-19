@@ -1,9 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://theworldclocks.com</loc>
-        <lastmod>2024-12-10</lastmod>
+        <loc>https://theworldclocks.com/</loc>
+        <lastmod>2024-12-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <url>
+        <loc>https://theworldclocks.com/timer</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/united-states/new-york</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://theworldclocks.com/united-kingdom/london</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/japan/tokyo</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/australia/sydney</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/brazil/sao-paulo</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/france/paris</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/italy/rome</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/germany/berlin</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/russia/moscow</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/china/beijing</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/south-korea/seoul</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/spain/madrid</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/netherlands/amsterdam</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/austria/vienna</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/thailand/bangkok</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/united-arab-emirates/dubai</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/turkey/istanbul</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/singapore/singapore</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/united-states/los-angeles</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/canada/toronto</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/mexico/mexico-city</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/argentina/buenos-aires</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theworldclocks.com/india/new-delhi</loc>
+        <lastmod>2024-12-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>

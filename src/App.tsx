@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import WorldClockTable from "./components/WorldClockTable";
 import CityDetails from "./components/CityDetails";
 import Timer from "./components/Timer";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
     const [is24HourFormat, setIs24HourFormat] = useState(false);
