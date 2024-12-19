@@ -42,9 +42,9 @@ function Clockcard({ is24HourFormat, toggleTimeFormat }:{ is24HourFormat: boolea
         getLocation();
     }, []);
     
-    useEffect(() => {
-        document.title = `TheWorldClocks | ${time || 'Loading...'}`;
-    }, [time]);
+    // useEffect(() => {
+    //     document.title = `TheWorldClocks | ${time || 'Loading...'}`;
+    // }, [time]);
     
     
     return (
